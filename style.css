@@ -417,7 +417,7 @@ main::before {
   
   
   body.page-gallery {
-    background: url("../image2/minecraftbackground.png") no-repeat center/cover fixed;
+    background: url("image2/minecraftbackground.png") no-repeat center/cover fixed;
   }
   
 
