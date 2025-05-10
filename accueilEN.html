@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="icon" type="image/png" href="pouce.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="accueilEN.html" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+                <h2>Main page</h2>
+            </a>
+        </div>
+
+        <div class="ticker">
+            <div class="ticker-content">
+                  •   Best portfolio in the world !!!   •                         •   🔥🔥🔥🔥🔥🔥🔥🔥🔥   •
+            </div>
+        </div>
+
+        <div class="auth-buttons">
+            <a href="accueilEN.html">EN</a>
+            <a href="accueil.html">FR</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="bubble-container">
+            <div class="bubble large" onclick="ouvrirPopup()" style="cursor: pointer;">
+                <a href="javascript:void(0)">
+                    <img src="CV_photo.jpg" alt="My CV">
+                    My CV
+                </a>
+            </div>
+            <div class="small-bubbles-container">
+                <div class="small-bubbles-row">
+                    <div class="bubble small">
+                        <a href="menuprojetsEN.html">
+                            <img src="programmation.jpg" alt="Programmation projects">
+                            Programmation projects
+                        </a>
+                    </div>
+                    <div class="bubble small" onclick="ouvrirPopupProjet()" style="cursor: pointer;">
+                        <a href="javascript:void(0)">
+                            <img src="progillu/avenirpro.jpg" alt="Professionnals projects">
+                            Professionnals projects
+                        </a>
+                    </div>
+                </div>
+                <div class="bubble minecraft">
+                    <a href="minecraftpageEN.html">
+                        <img src="minecraftimageaccueil.png" alt="Minecraft projects">
+                        Minecraft projects
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Popup CV -->
+        <div id="popup" class="popup">
+            <div class="popup-contenu">
+                <span class="fermer" onclick="fermerPopup()">×</span>
+                <h2>My CV that I need to translate</h2>
+                <iframe src="Paul_BRIAND_CV (1).pdf" class="cv-pdf" title="CV Paul Briand"></iframe>
+            </div>
+        </div>
+
+        <!-- Popup Professionnals projects -->
+        <div id="popup-projet" class="popup">
+            <div class="popup-contenu">
+                <span class="fermer" onclick="fermerPopupProjet()">×</span>
+                <h2>My Professional Project that I need to traduce</h2>
+                <iframe src="Projet_pro_portfolio_- Paul.pdf" class="cv-pdf" title="Professional Project"></iframe>
+            </div>
+        </div>
+
+        <div class="expandable-container">
+            <div class="expandable">
+                <div class="expandable-header" onclick="toggleExpandable(this)">
+                    <h2>My motivations <span class="indicator">▼</span></h2>
+                </div>
+                <div class="expandable-content">
+                    <p>This website aims to share my motivation in a more direct and personal way than a traditional cover letter. I’m passionate about artificial intelligence and want to specialize in it, particularly in its application to embedded systems and robotics. I’m eager to learn, I enjoy taking on challenges, and I’m determined to go far. My long-term goal is to complement my engineering degree with an international master’s program that’s more hands-on and focused on robotics, in order to enrich my academic path and pursue a fulfilling career, whether as a freelancer or within a company. I enjoy applied mathematics, especially as used in data science, and I take great pleasure in programming and solving logical problems. Always motivated, I like to lift others up, whether during exams or in group projects. If I have the opportunity to join ESILV, I intend to fully commit, especially to student life—I'm particularly drawn to the robotics club. I am convinced that ESILV can give me the tools to go far, and I am ready to give it my all.</p>
+                    <!-- Add more text here if necessary -->
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2025 My Portfolio. All rights reserved.</p>
+        </footer>
+    </main>
+
+    <!-- JavaScript -->
+    <script>
+        function ouvrirPopup() {
+            document.getElementById('popup').classList.add('active');
+        }
+
+        function fermerPopup() {
+            document.getElementById('popup').classList.remove('active');
+        }
+
+        function ouvrirPopupProjet() {
+            document.getElementById('popup-projet').classList.add('active');
+        }
+
+        function fermerPopupProjet() {
+            document.getElementById('popup-projet').classList.remove('active');
+        }
+
+        // Close popups when clicking outside
+        window.onclick = function(event) {
+            const popupCV = document.getElementById('popup');
+            const popupProjet = document.getElementById('popup-projet');
+            if (event.target === popupCV) {
+                fermerPopup();
+            } else if (event.target === popupProjet) {
+                fermerPopupProjet();
+            }
+        }
+
+        function toggleExpandable(element) {
+            const container = element.closest('.expandable');
+            container.classList.toggle('active');
+        }
+
+        // Optional: Close expandable when clicking outside
+        document.addEventListener('click', function(event) {
+            const expandables = document.querySelectorAll('.expandable');
+            expandables.forEach(expandable => {
+                if (!expandable.contains(event.target)) {
+                    expandable.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
