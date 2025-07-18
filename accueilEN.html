@@ -7,7 +7,7 @@
     <link rel="icon" type="image/png" href="pouce.png">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="home-page-body">    
     <header>
         <div class="logo">
             <a href="accueilEN.html" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
@@ -39,32 +39,32 @@
                 <div class="small-bubbles-row">
                     <div class="bubble small">
                         <a href="menuprojetsEN.html">
-                            <img src="programmation.jpg" alt="Programmation projects">
-                            Programmation projects
+                            <img src="programmation.jpg" alt="Programming Projects">
+                            Programming Projects
                         </a>
                     </div>
                     <div class="bubble small" onclick="ouvrirPopupProjet()" style="cursor: pointer;">
                         <a href="javascript:void(0)">
-                            <img src="progillu/avenirpro.jpg" alt="Professionnals projects">
-                            Professionnals projects
+                            <img src="progillu/avenirpro.jpg" alt="Professional Projects">
+                            Professional Projects
                         </a>
                     </div>
                 </div>
 
-                <!-- NOUVELLE LIGNE POUR LA BULLE SPORT -->
-            <div class="small-bubbles-row">
-                <div class="bubble small">
-                    <a href="projetsportEN.html">
-                        <img src="sport.png" alt="Projets Sportifs">
-                        Sport life
-                    </a>
+                <!-- NEW LINE FOR SPORT BUBBLE -->
+                <div class="small-bubbles-row">
+                    <div class="bubble small">
+                        <a href="projetsportEN.html">
+                            <img src="sport.png" alt="Sport Projects">
+                            Sport Life
+                        </a>
+                    </div>
                 </div>
-            </div>
 
                 <div class="bubble minecraft">
                     <a href="minecraftpageEN.html">
-                        <img src="minecraftimageaccueil.png" alt="Minecraft projects">
-                        Minecraft projects
+                        <img src="minecraftimageaccueil.png" alt="Minecraft Projects">
+                        Minecraft Projects
                     </a>
                 </div>
             </div>
@@ -79,11 +79,11 @@
             </div>
         </div>
 
-        <!-- Popup Professionnals projects -->
+        <!-- Popup Professional Project -->
         <div id="popup-projet" class="popup">
             <div class="popup-contenu">
                 <span class="fermer" onclick="fermerPopupProjet()">×</span>
-                <h2>My Professional Project that I need to traduce</h2>
+                <h2>My Professional Project</h2>
                 <iframe src="Projet_pro_portfolio_- Paul.pdf" class="cv-pdf" title="Professional Project"></iframe>
             </div>
         </div>
@@ -95,15 +95,14 @@
                 </div>
                 <div class="expandable-content">
                     <p>
-    As a future engineer, I would like to specialize in data and robotics. I am highly motivated and have already gained hands-on experience through various projects, as shown in the programming projects section.
-</p>
-<p>
-    In the long term, my goal is to pursue a PhD. To be honest, I have a strong thirst for knowledge and a deep desire to explore as much as possible in these fields.
-</p> 
-<p>
-    Motivated and curious, this small blog has recently become a sort of notebook where I keep track of my different projects.
-</p>
-
+                        As a future engineer, I would like to specialize in data and robotics. I am highly motivated and have already gained hands-on experience through various projects, as shown in the programming projects section.
+                    </p>
+                    <p>
+                        In the long term, my goal is to pursue a PhD. To be honest, I have a strong thirst for knowledge and a deep desire to explore as much as possible in these fields.
+                    </p> 
+                    <p>
+                        Motivated and curious, this small blog has recently become a sort of notebook where I keep track of my different projects. (Time machine functionality added to see the evolution of the site via Wayback Machine!)
+                    </p>
                 </div>
             </div>
         </div>
@@ -147,7 +146,7 @@
             container.classList.toggle('active');
         }
 
-        // Optional: Close expandable when clicking outside
+        // Optional: Close expandables when clicking outside
         document.addEventListener('click', function(event) {
             const expandables = document.querySelectorAll('.expandable');
             expandables.forEach(expandable => {
