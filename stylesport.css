@@ -1,21 +1,15 @@
 body {
-  margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #fff;
-  line-height: 1.6;
-  /* Nouveau code pour le fond */
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  /* Supprime l'ancienne couleur de fond */
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: white;
 }
 
 .logo {
     display: flex;
     align-items: center;
 }
-
 
 header {
     position: fixed;
@@ -26,10 +20,11 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    background-color: rgba(202, 209, 215, 0.65);
-    backdrop-filter: blur(10px);
-    color: white;
+    padding: 8px 20px;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .ticker {
@@ -44,9 +39,9 @@ header {
     display: inline-block;
     padding-left: 100%;
     animation: ticker 15s linear infinite;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
-    color: #7acf2a;
+    color: #2e7d32;
 }
 
 @keyframes ticker {
@@ -57,241 +52,106 @@ header {
 .auth-buttons a {
     margin-left: 10px;
     text-decoration: none;
-    color: white;
-    border: 1px solid white;
+    color: #2e7d32;
+    border: 1px solid #2e7d32;
     padding: 8px 16px;
     border-radius: 5px;
     transition: all 0.3s ease;
     font-weight: bold;
     display: inline-block;
+    background: rgba(46, 125, 50, 0.1);
 }
 
 .auth-buttons a:hover {
-    background-color: white;
-    color: #232f3e;
+    background-color: #2e7d32;
+    color: white;
     transform: scale(1.05);
 }
 
 main {
-  margin-top: 60px;
-  position: relative;
+    margin-top: 60px;
+    position: relative;
 }
 
 main::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5); /* Noir à 50% d'opacité */
-  z-index: -1;
+    display: none;
 }
 
-.bubble-container {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    min-height: calc(100vh - 60px);
-}
-
-.bubble {
-    background-color: #f0f0f0;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+main section {
     text-align: center;
-    margin: 10px;
+    padding: 80px 20px;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.bubble:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+main section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #2e7d32;
+    font-weight: 700;
 }
 
-.bubble a {
-    text-decoration: none;
-    color: #232f3e;
-    font-weight: bold;
-    font-size: 18px;
-    padding: 20px;
+main section h3 {
+    font-size: 1.8rem;
+    color: #555;
+    font-weight: 400;
+    margin-bottom: 40px;
+}
+
+main section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     display: block;
-    width: 100%;
-    height: 100%;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
 }
 
-.bubble.large {
-    flex: 1 1 25%; /* Réduction de la largeur relative */
-    height: 400px; /* Augmentation de la hauteur */
-    min-width: 250px; /* Largeur minimale pour garder la lisibilité */
+main section img:hover {
+    transform: scale(1.02);
 }
 
-.bubble.large {
-  position: relative;
-  overflow: hidden;
-}
-
-.bubble.large img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
-  filter: brightness(0.8);
-}
-
-.bubble.large a {
-  color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  position: relative;
-  z-index: 1;
-}
-
-.small-bubbles-container {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.small-bubbles-row {
-    display: flex;
-    gap: 20px; /* espace horizontal entre bulles */
-    margin-top: 20px; /* espace vertical entre les lignes */
-}
-
-
-.small-bubbles-row {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-}
-
-.bubble.small {
-    flex: 1 1 45%;
-    height: 150px;
-    margin: 0 10px;
-    position: relative; /* Ajouté */
-    overflow: hidden; /* Ajouté */
-}
-
-.bubble.small img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-    filter: brightness(0.8); /* Optionnel - même effet que Minecraft */
-}
-
-.bubble.small a {
-    text-decoration: none;
-    color: white; /* Changé de #232f3e */
-    font-weight: bold;
-    font-size: 18px;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    z-index: 1;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Ajouté */
-    width: 100%;
-    height: 100%;
-}
-
-/* Styles spécifiques pour le bouton Minecraft */
-.bubble.minecraft {
-    width: 90%;
-    height: 200px;
-    margin-top: 20px;
-    position: relative;
-    overflow: hidden;
-}
-
-.bubble.minecraft a {
+main section::after {
+    content: "";
     display: block;
-    width: 100%;
-    height: 100%;
-    position: relative;
-    z-index: 1;
-    color: white;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #2e7d32, #7acf2a);
+    margin: 50px auto 0;
+    border-radius: 2px;
 }
 
-.bubble.minecraft img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-    filter: brightness(0.8);
-}
-
-/* Responsive pour mobile */
 @media (max-width: 768px) {
-    .bubble-container {
+    header {
         flex-direction: column;
+        padding: 10px;
     }
-    .bubble.large {
-        height: 200px; /* Réduction de la hauteur sur mobile */
-        width: 90%; /* Meilleure adaptation sur petit écran */
-        margin: 10px auto; /* Centrage horizontal */
-    }
-    .bubble.large, .small-bubbles-container {
-        flex: 1 1 100%;
-    }
-    .small-bubbles-row {
-        flex-direction: column;
-        align-items: center;
-    }
-    .bubble.small {
-        width: 90%;
+    
+    .ticker {
         margin: 10px 0;
-    }
-    .bubble.minecraft {
         width: 100%;
-        height: 150px;
+    }
+    
+    .auth-buttons {
         margin-top: 10px;
     }
+    
+    main section {
+        padding: 50px 15px;
+    }
+    
+    main section h2 {
+        font-size: 2rem;
+    }
+    
+    main section h3 {
+        font-size: 1.4rem;
+    }
 }
-
-
-
-@media (max-width: 768px) {
-  .expandable-container {
-      padding: 10px;
-  }
-  
-  .expandable-header {
-      padding: 12px 20px;
-  }
-  
-  .expandable-header h2 {
-      font-size: 1.2em;
-  }
-}
-
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
+}
