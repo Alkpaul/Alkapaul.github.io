@@ -898,3 +898,20 @@ body {
 main::before {
   display: none;
 }
+
+
+.video-bubble {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #f4f6f8;
+  border-left: 5px solid #007bff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.video-intro {
+  font-size: 1.2em;
+  font-style: italic;
+  margin-bottom: 15px;
+  color: #333;
+}
