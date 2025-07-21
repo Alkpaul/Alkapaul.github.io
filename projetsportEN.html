@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio - Sport Life</title>
     <link rel="icon" type="image/png" href="pouce.png">
-    <link rel="stylesheet" href="stylesport.css">
+    <link rel="stylesheet" href="css/stylesport.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
+
+<body class="loading">
     <header>
         <div class="logo">
-            <a href="accueilEN.html" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-                <h2>Main page</h2>
+            <a href="accueilEN.html">
+                <h2>Main Page</h2>
             </a>
         </div>
-
         <div class="ticker">
             <div class="ticker-content">
                 • Best portfolio in the world !!! • • 🔥🔥🔥🔥🔥🔥🔥🔥🔥 •
             </div>
         </div>
-
         <div class="auth-buttons">
             <a href="projetsportEN.html">EN</a>
             <a href="projetsport.html">FR</a>
@@ -28,10 +29,112 @@
     </header>
 
     <main>
-        <section>
-            <h2>Sport Life and Achievements</h2>
-            <img src="progillu/sportfond.png" alt="Sport solution">
-        </section>
+        <div class="hero-section">
+            <h1 class="hero-title">Sport Life</h1>
+            <p class="hero-subtitle">Explore my athletic background and fitness achievements</p>
+
+            <div class="sport-display">
+                <img src="progillu/sportfond.png" alt="Sport background" class="central-image" id="mainSportImage">
+                <p class="click-hint">Click on the image to discover my activities</p>
+
+                <div class="sport-cards" id="sportCards">
+                    <div class="sport-card semi-marathon">
+                        <h3>🏃‍♂️ Half-Marathon</h3>
+                        <div class="image-gallery">
+                            <img src="galerie/semi1.jpg" alt="Half-marathon 1" class="gallery-image">
+                            <img src="galerie/semi2.jpg" alt="Half-marathon 2" class="gallery-image">
+                        </div>
+                        <p>As a former boxer, running and cardio have always been part of my routine. While studying in
+                            England, I discovered a real passion for it and ran my first half-marathon.</p>
+                    </div>
+
+                    <div class="sport-card blessure">
+                        <h3>🦵 Knee Injury</h3>
+                        <div class="image-gallery">
+                            <img src="galerie/blessure1.jpg" alt="Injury 1" class="gallery-image">
+                            <img src="galerie/blessure2.jpg" alt="Injury 2" class="gallery-image">
+                        </div>
+                        <p>In April 2025, after a week of intense training and vacation, my body gave out. I was
+                            diagnosed with patellar syndrome due to overtraining. My participation in the Antony
+                            Half-Marathon was over, and my entry in the Paris Hyrox was still uncertain...</p>
+                    </div>
+
+                    <div class="sport-card musculation">
+                        <h3>💪 Weight Training</h3>
+                        <div class="image-gallery">
+                            <img src="galerie/muscu1.jpg" alt="Weight training 1" class="gallery-image">
+                            <img src="galerie/muscu2.jpg" alt="Weight training 2" class="gallery-image">
+                        </div>
+                        <p>I work out 4 to 5 times a week. Weight training helped me develop both mental and physical
+                            strength. I dedicate a lot of time to it—it's a true passion of mine.</p>
+                    </div>
+
+                    <div class="sport-card hyrox">
+                        <h3>🏋️‍♂️ Hyrox</h3>
+                        <div class="image-gallery">
+                            <img src="galerie/hyrox1.jpg" alt="Hyrox 1" class="gallery-image">
+                            <img src="galerie/hyrox2.jpg" alt="Hyrox 2" class="gallery-image">
+                        </div>
+                        <p>Hyrox is the perfect blend of running and fitness. It challenges both endurance and
+                            performance. I invest a lot of effort into pushing my limits.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
+
+    <script>
+        // Page load animation
+        document.addEventListener('DOMContentLoaded', function () {
+            document.body.classList.add('loaded');
+        });
+
+        // Main image interaction
+        const mainImage = document.getElementById('mainSportImage');
+        const sportCards = document.getElementById('sportCards');
+        let isExpanded = false;
+
+        mainImage.addEventListener('click', function () {
+            isExpanded = !isExpanded;
+
+            if (isExpanded) {
+                sportCards.classList.add('visible');
+                mainImage.style.transform = 'scale(0.9)';
+            } else {
+                sportCards.classList.remove('visible');
+                mainImage.style.transform = 'scale(1)';
+            }
+        });
+
+        // Parallax scroll effect on header
+        window.addEventListener('scroll', function () {
+            const scrolled = window.pageYOffset;
+            const header = document.querySelector('header');
+
+            if (scrolled > 50) {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.8)';
+                header.style.boxShadow = 'none';
+            }
+        });
+
+        // Smooth animation for cards
+        const cards = document.querySelectorAll('.sport-card');
+        cards.forEach((card, index) => {
+            card.style.animationDelay = `${index * 0.1}s`;
+        });
+
+        // Handle image loading errors
+        const images = document.querySelectorAll('img');
+        images.forEach(img => {
+            img.addEventListener('error', function () {
+                this.style.opacity = '0.3';
+                this.alt = 'Image not available';
+            });
+        });
+    </script>
 </body>
+
 </html>

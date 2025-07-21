@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Portfolio</title>
+    <title>Mon Portfolio - Mes Projets</title>
     <link rel="icon" type="image/png" href="pouce.png">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/menustyle.css">
 </head>
-<body>
+
+<body class="loading">
     <header>
         <div class="logo">
-            <a href="accueil.html" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+            <a href="accueil.html">
                 <h2>Page d'accueil</h2>
             </a>
         </div>
 
         <div class="ticker">
             <div class="ticker-content">
-                  •   Le meilleur portfolio au monde !!!   •                         •   🔥🔥🔥🔥🔥🔥🔥🔥🔥   •
+                • Le meilleur portfolio au monde !!! • 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥 •
             </div>
         </div>
 
@@ -26,44 +28,158 @@
             <a href="menuprojets.html">FR</a>
         </div>
     </header>
+
     <main>
         <section id="projects">
-            <h2>Mes Projets</h2>
-            <div class="gallery-grid">
-                <a href="projetsprogrammation.html" class="gallery-item">
-                    <img src="progillu/illucolision21.png" alt="Projet 1">
-                    <span class="box-name">Collision 2 carrés</span>
-                </a>
-                <a href="projetsprogrammation1.html" class="gallery-item">
-                    <img src="progillu/illucollision3.png" alt="Projet 2">
-                    <span class="box-name">Collision 3 carrés</span>
-                </a>
+            <div class="hero-section">
+                <h1 class="hero-title">Mes Projets</h1>
+                <p class="hero-subtitle">Découvrez mes réalisations et projets techniques</p>
+            </div>
 
-                <a href="rechercheopprojet.html" class="gallery-item">
-                    <img src="progillu/RechercheOpIllu.png" alt="Project 2">
-                    <span class="box-name">Recherche Opérationnelle</span>
-                </a>
+            <div class="projects-container">
+                <div class="gallery-grid">
+                    <a href="projetsprogrammation.html" class="gallery-item" data-category="programming">
+                        <div class="image-container">
+                            <img src="progillu/illucolision21.png" alt="Collision 2 carrés">
+                            <div class="overlay">
+                                <span class="view-project">Voir le projet</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">Collision 2 carrés</h3>
+                            <p class="project-category">Programmation</p>
+                        </div>
+                    </a>
 
-                <a href="AirNetprojet.html" class="gallery-item">
-                    <img src="progillu/AirNetillu.png" alt="Project 2">
-                    <span class="box-name">Projet AirNet</span>
-                </a>
+                    <a href="projetsprogrammation1.html" class="gallery-item" data-category="programming">
+                        <div class="image-container">
+                            <img src="progillu/illucollision3.png" alt="Collision 3 carrés">
+                            <div class="overlay">
+                                <span class="view-project">Voir le projet</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">Collision 3 carrés</h3>
+                            <p class="project-category">Programmation</p>
+                        </div>
+                    </a>
 
-                <a href="GamePine.html" class="gallery-item">
-                    <img src="progillu/Game&Pineillu.png" alt="Project 2">
-                    <span class="box-name">Game&Pine</span>
-                </a>
+                    <a href="rechercheopprojet.html" class="gallery-item" data-category="research">
+                        <div class="image-container">
+                            <img src="progillu/RechercheOpIllu.png" alt="Recherche Opérationnelle">
+                            <div class="overlay">
+                                <span class="view-project">Voir le projet</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">Recherche Opérationnelle</h3>
+                            <p class="project-category">Mathématiques</p>
+                        </div>
+                    </a>
 
-                <a href="Mastercamp2025.html" class="gallery-item">
-                    <img src="progillu/MasterCampmenu.png" alt="Project 2">
-                    <span class="box-name">MasterCamp 2025</span>
-                </a>
-                <!-- Ajoute d'autres projets ici si besoin -->
+                    <a href="AirNetprojet.html" class="gallery-item" data-category="web">
+                        <div class="image-container">
+                            <img src="progillu/AirNetillu.png" alt="Projet AirNet">
+                            <div class="overlay">
+                                <span class="view-project">Voir le projet</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">Projet AirNet</h3>
+                            <p class="project-category">Programmation</p>
+                        </div>
+                    </a>
+
+                    <a href="GamePine.html" class="gallery-item" data-category="gaming">
+                        <div class="image-container">
+                            <img src="progillu/Game&Pineillu.png" alt="Game&Pine">
+                            <div class="overlay">
+                                <span class="view-project">Voir le projet</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">Game&Pine</h3>
+                            <p class="project-category">Programmation</p>
+                        </div>
+                    </a>
+
+                    <a href="Mastercamp2025.html" class="gallery-item" data-category="event">
+                        <div class="image-container">
+                            <img src="progillu/MasterCampmenu.png" alt="MasterCamp 2025">
+                            <div class="overlay">
+                                <span class="view-project">Voir le projet</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">MasterCamp 2025</h3>
+                            <p class="project-category">Programmation</p>
+                        </div>
+                    </a>
+                </div>
             </div>
         </section>
     </main>
+
     <footer>
-        <p>© 2025 Mon Portfolio. Tous droits réservés.</p>
+        <div class="footer-content">
+            <p>&copy; 2025 Mon Portfolio. Tous droits réservés.</p>
+        </div>
     </footer>
+
+    <script>
+        // Animation d'entrée
+        document.addEventListener('DOMContentLoaded', function () {
+            document.body.classList.add('loaded');
+
+            // Animation d'apparition des projets
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            galleryItems.forEach((item, index) => {
+                item.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
+
+        // Effet de parallaxe léger sur le header
+        window.addEventListener('scroll', function () {
+            const scrolled = window.pageYOffset;
+            const header = document.querySelector('header');
+
+            if (scrolled > 50) {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.8)';
+                header.style.boxShadow = 'none';
+            }
+        });
+
+        // Animation au scroll pour les éléments
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function (entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            observer.observe(item);
+        });
+
+        // Gestion des erreurs d'images
+        const images = document.querySelectorAll('img');
+        images.forEach(img => {
+            img.addEventListener('error', function () {
+                this.style.opacity = '0.3';
+                this.alt = 'Image non disponible';
+                this.parentElement.classList.add('image-error');
+            });
+        });
+    </script>
 </body>
+
 </html>
